@@ -1,0 +1,8 @@
+---
+# tasks file for azure-sqldatabase
+- include_vars:
+    file: copy_db_vars.yml
+  when: sql_createmode != "default"
+
+- include_tasks: azure-mssqldb.yml
+  loop: "{{ sql_databases }}"

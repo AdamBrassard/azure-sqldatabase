@@ -1,0 +1,18 @@
+- name: Create/Update an MS SQL DB instance
+  azure_rm_resource:
+    api_version: '2017-10-01-preview'
+    resource_group: "{{ resource_group }}"
+    provider: sql
+    resource_type: servers
+    resource_name: "{{ sql_server }}"
+    subresource:
+      - type: databases
+        name: "{{ item.sql_db_name }}"
+    body:
+      location: "{{ location }}"
+      sku: 
+        name: "{{ sql_db_size }}"
+      properties:
+        createMode: "{{ sql_createmode | default(omit,true) }}"
+        sourceDatabaseId: "{{ sql_database_source_id | default(omit,true) }}"
+    idempotency: yes
