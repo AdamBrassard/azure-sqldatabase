@@ -1,8 +1,10 @@
 ---
 # tasks file for azure-sqldatabase
-- include_vars:
+- name: Include copy Azure ID string if specified Copy mode
+  include_vars:
     file: copy_db_vars.yml
   when: sql_createmode != "default"
 
-- include_tasks: azure-mssqldb.yml
+- name: Run DB create
+  include_tasks: azure-mssqldb.yml
   loop: "{{ sql_databases }}"
