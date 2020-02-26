@@ -6,7 +6,7 @@ Creates or updates new Microsoft SQL Database instance on existing Database Serv
 Requirements
 ------------
 
-ansible >=2.9.0
+ansible >=2.8.0
 Requires Azure_rm Modules
 
 [Azure Account information]('https://docs.ansible.com/ansible/latest/scenario_guides/guide_azure.html')
@@ -27,10 +27,9 @@ sql_server: #Name of the existing SQL server
 sql_databases:
   - sql_db_name:  #Friendly Name of the database instance
 sql_createmode: #Sets the type of creation mode of the database instance (ex. default, copy, restore, etc.)
-SQL_DATABASE_FORCE_UPDATE: #SQL Database will be updated if given parameters differ from existing resource state. To force SQL Database update in any circumstances set this parameter to True.
 sql_db_size: # SKU size for datbase, Basic for DTU and so on
 
-sql_db_source_name: #When using create mode as "copy" this var will be needed, it defines the name of the datebase you are copying from for your new DB
+sql_db_source_name: #When using create mode as "copy" this defined the name of the datebase you are copying from for your new DB
 subscription_id: #When using create mode as "copy" this var will be needed for the SOURCE ID
 ```
 
