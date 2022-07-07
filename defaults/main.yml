@@ -1,2 +1,3 @@
 ---
 # defaults file for azure-sqldatabase
+sql_createmode: "default"

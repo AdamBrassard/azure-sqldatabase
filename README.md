@@ -21,6 +21,7 @@ Role Variables
 ```yaml
 #Default required
 resource_group:
+location:
 sql_server: #Name of the existing SQL server
 
 #SQL Database Options
@@ -52,6 +53,7 @@ Example Playbook
       set_fact:
 #dependency Vars
         resource_group: test
+        location: canadacentral
         sql_server: "ThisSQLserver"
 #Role Vars
         sql_databases:
@@ -73,6 +75,7 @@ Example Playbook
       set_fact:
 #dependency Vars
         resource_group: test
+        location: canadacentral
         sql_server: "ThisSQLserver"
 #Role Vars
         sql_databases:
@@ -99,6 +102,7 @@ Example Playbook
       set_fact:
 #dependency Vars
         resource_group: test
+        location: canadacentral
         sql_server: "ThisSQLserver"
 #Role Vars
         sql_databases:
@@ -125,6 +129,7 @@ Example Playbook
       set_fact:
 #dependency Vars
         resource_group: test
+        location: canadacentral
         sql_server: "ThisSQLserver"
 #Role Vars
         sql_databases:
